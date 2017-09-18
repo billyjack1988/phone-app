@@ -1,8 +1,9 @@
-<%=answer%><br>
+<h1 class = "font_size font_color cent font_type"><%=answer%><br></h1>
 
 <%phone_book.each do |row|%>
-	<%row.each do |item|%>
-		<%=item%>
+	<div class = "imag_bord font_size font_color cent font_type"><%row.each do |item|%>
+	<%=item%>
 	<br>
-	<%end%>
+	<%end%></div>
+    <br>
 	<%end%>
