@@ -111,8 +111,6 @@ db = PG::Connection.new(db_params)
 		yup = row.split(',')
 		arr << yup
 	end
-	# delete_split = delete_info.split(',')
-	# delete_slice = delete_slice.slice(7).to_a
 	arr.each do |row|
 		delete_num = row[-1]
 		db.exec("DELETE FROM phonenum_table WHERE phone = '#{delete_num}'")
