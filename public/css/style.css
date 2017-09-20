@@ -50,3 +50,17 @@
     margin-top: 0%;
     text-align: center;
 }
+
+#box2 {
+    font-size: 5vh;
+    color: black;
+    background-color: whitesmoke;
+    border-style: double;
+    border-color: blue;
+    padding: 1vh;
+    border-radius: 3vh;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 0%;
+    text-align: center;
+}
