@@ -9,9 +9,9 @@ get '/' do
 end
 
 post '/results' do
-info = params[:info]
-answer = add_numbers(info)
-redirect '/resultspage?answer=' + answer
+	info = params[:info]
+	answer = add_numbers(info)
+	redirect '/resultspage?answer=' + answer
 end
 
 get '/resultspage' do
@@ -61,10 +61,10 @@ end
 
 post '/updated' do
 	answer = "Info Updated"
-  updated_info = params[:info]
+    updated_info = params[:info]
 	updated_slice = updated_info.each_slice(7).to_a
-  info = session[:info]
-  old_phone = []
+    info = session[:info]
+    old_phone = []
   
   info.each do |row|
   	split = row.split(',')
