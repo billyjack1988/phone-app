@@ -71,7 +71,7 @@ def search_data_lname(info)
 }
 db = PG::Connection.new(db_params)
 check = db.exec("SELECT * FROM phonenum_table WHERE last_name = '#{info}'")
-woo = check.num_tuples
+yup = check.num_tuples
 if check.num_tuples.zero? == false
 	search_answer = check.values
 else
@@ -108,8 +108,8 @@ def delete_from_table(delete_info)
 db = PG::Connection.new(db_params)
 	arr = []
 	delete_info.each do |row|
-		woo = row.split(',')
-		arr << woo
+		yup = row.split(',')
+		arr << yup
 	end
 	# delete_split = delete_info.split(',')
 	# delete_slice = delete_slice.slice(7).to_a
