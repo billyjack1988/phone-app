@@ -38,7 +38,7 @@
 }
 
 #box {
-    font-size: 3vh;
+    font-size: 5vh;
     color: black;
     background-color: whitesmoke;
     border-style: double;
@@ -47,6 +47,6 @@
     border-radius: 3vh;
     margin-right: 30%;
     margin-left: 30%;
-    margin-top: 10%;
+    margin-top: 0%;
     text-align: center;
 }
