@@ -36,3 +36,17 @@
 .font_type {
     font-family: 'myfont';
 }
+
+#box {
+    font-size: 3vh;
+    color: black;
+    background-color: whitesmoke;
+    border-style: double;
+    border-color: blue;
+    padding: 1vh;
+    border-radius: 3vh;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 10%;
+    text-align: center;
+}

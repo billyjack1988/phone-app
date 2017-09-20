@@ -47,9 +47,9 @@ post "/update" do
 		redirect "/answer_page?answer=" + answer
 	else
 		if choose == "update"
-			redirect "/update_answer?"
+		   redirect "/update_answer?"
 		else
-			redirect "/delete?"
+		   redirect "/delete?"
 		end
 	end
 
