@@ -3,8 +3,8 @@
 
 <%unless search_answer == "Need search term" ||search_answer ==  "isnt in phone book" %>
     <%search_answer.each do |row|%>
-	<%woo = row.join(",")%>
-		<input type = "checkbox" name = "info[]" value = "<%=woo%>"> 
+	<%yup = row.join(",")%>
+		<input type = "checkbox" name = "info[]" value = "<%=yup%>"> 
 		<%row.each do |item| %>
 			<%=item%>
 		<%end%>
