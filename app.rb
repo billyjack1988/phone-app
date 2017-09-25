@@ -79,7 +79,7 @@ post "/update" do
 	choose = params[:choose]
 	if session[:info] == nil
 		answer = "Didn't Change"
-		redirect "/answer_page?answer=" + answer
+		redirect "/resultspage?answer=" + answer
 	else
 		if choose == "update"
 		   redirect "/update_answer?"
@@ -110,8 +110,13 @@ post '/updated' do
 end
 
 get "/delete" do
-	answer = "Info DELETED"
-	deleting_info = session[:info]
-	delete_from_table(deleting_info)
-	redirect "/resultspage?answer=" + answer
+	if session[:info]== nil 
+	
+	else 
+		answer = "Info DELETED"
+		deleting_info = session[:info]
+		delete_from_table(deleting_info)
+		redirect "/resultspage?answer=" + answer
+	end
+	
 end
