@@ -1,24 +1,42 @@
 require 'sinatra'
 require 'pg'
 require_relative 'my_func.rb'
+# require "bcrypt"
 enable :sessions
 load './local_env.rb' if File.exist?('./local_env.rb')
 
 get "/" do 
-    erb :login, locals: {error: ""}
-end 
+message = params[:message]
+	if message == nil
+		message = "Please Enter Username and Password"
+	end
+		erb :login, locals:{message:message}
+end
 
-post '/login' do
-  username = params[:user_nam]
-  password = params[:p_word]
-  error_msg = "Wrong Username or Password:"
-    if username == "bootyjack1234" ; password == "bootymeat1234"
-        redirect '/info?user_nam='+ username + '&p_word='+ password 
-    elsif username == "bootymarv1234" ; password == "bootymarv1234"
-        redirect '/info?user_nam='+ username + '&p_word='+ password
-    else 
-        erb :login, locals: {error: error_msg}
-    end
+post "/create_login" do
+	redirect "/make_login"
+end
+get "/make_login" do
+	erb :new_login
+end
+
+post "/made_login" do
+	user = params[:user]
+	pass = params[:pass]
+	message = add_to_login(user,pass)
+	redirect "/?message=" + message
+end
+
+
+post "/login" do
+	user = params[:username]
+	pass = params[:password]
+	if check_creds?(user,pass) == true 
+		redirect "/info"
+	else 
+		message = "incorrect username or password"
+		redirect "/?message=" + message
+	end
 end 
 
 get '/info' do
