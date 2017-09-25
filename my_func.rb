@@ -131,9 +131,7 @@ db = PG::Connection.new(db_params)
 check = db.exec("SELECT*FROM userandpassword WHERE username = '#{user}'")
  		if check.num_tuples.zero? == false
  			check_val = check.values.flatten
- 			check_pass = (check_val[1])
- 			p "#{check_pass}"
-  			if check_val[1] == check_pass
+  			if check_val[1] == pass
  				true
  			else
  				false
